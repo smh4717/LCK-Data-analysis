@@ -108,21 +108,21 @@ ORDER BY SUM(if(Winner = '1', Winner, 0)) DESC;
 # 5 블루팀 시즌별 승률
 SELECT *
 FROM lol2020springrate a
-LEFT OUTER JOIN lol2020summerrate b
-ON a.Blue = b.Blue
-LEFT OUTER JOIN lol2021springrate c
-ON b.Blue = c.Blue
+	LEFT OUTER JOIN lol2020summerrate b
+		ON a.Blue = b.Blue
+	LEFT OUTER JOIN lol2021springrate c
+		ON b.Blue = c.Blue
 UNION
 SELECT *
 FROM lol2020springrate a
-LEFT OUTER JOIN lol2020summerrate b
-ON a.Blue = b.Blue
-RIGHT OUTER JOIN lol2021springrate c
-ON b.Blue = c.Blue
+	LEFT OUTER JOIN lol2020summerrate b
+		ON a.Blue = b.Blue
+	RIGHT OUTER JOIN lol2021springrate c
+		ON b.Blue = c.Blue
 UNION
 SELECT *
 FROM lol2020springrate a
-RIGHT OUTER JOIN lol2020summerrate b
-ON a.Blue = b.Blue
-LEFT OUTER JOIN lol2021springrate c
-ON b.Blue = c.Blue;
+	RIGHT OUTER JOIN lol2020summerrate b
+		ON a.Blue = b.Blue
+	LEFT OUTER JOIN lol2021springrate c
+		ON b.Blue = c.Blue;
